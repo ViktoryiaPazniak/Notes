@@ -6,7 +6,7 @@ using Notes.Domain;
 
 namespace Notes.Application.Notes.Commands.UpdateNote
 {
-    public class UpdateNoteCommandHandler : IRequestHandler<UpdateNoteCommand>
+    public class UpdateNoteCommandHandler : IRequestHandler<UpdateNoteCommand, Unit>
     {
         private readonly INotesDbContext _dbContext;
 
