@@ -396,3 +396,6 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/Notes.backend/Notes.WebApi/Platinum.Notes.db
+/Notes.backend/Notes.WebApi/Platinum.Notes.db-shm
+/Notes.backend/Notes.WebApi/Platinum.Notes.db-wal
