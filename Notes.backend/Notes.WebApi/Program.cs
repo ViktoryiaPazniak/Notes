@@ -3,6 +3,7 @@ using Notes.Application.Interfaces;
 using Notes.Application;
 using Notes.Persistance;
 using System.Reflection;
+using Notes.WebApi.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAutoMapper(config =>
@@ -27,6 +28,7 @@ builder.Services.AddCors(opt =>
 
 var app = builder.Build();
 
+app.UseCustomExceptionHandler();
 app.UseRouting();
 app.UseHttpsRedirection();
 app.UseCors("AllowAll");
