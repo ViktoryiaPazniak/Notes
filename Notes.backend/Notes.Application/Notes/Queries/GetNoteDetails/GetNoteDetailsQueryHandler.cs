@@ -6,7 +6,7 @@ using Notes.Application.Interfaces;
 
 namespace Notes.Application.Notes.Queries.GetNoteDetails
 {
-    partial class GetNoteDetailsQueryHandler
+    public class GetNoteDetailsQueryHandler
         : IRequestHandler<GetNoteDetailsQuery, NoteDetailsVm>
     {
         private readonly INotesDbContext _dbContext;
@@ -22,7 +22,7 @@ namespace Notes.Application.Notes.Queries.GetNoteDetails
                 .FirstOrDefaultAsync(note =>
                 note.Id == request.Id, cancellationToken);
 
-            if (entity == null || entity.Id != request.UserId)
+            if (entity == null || entity.UserId != request.UserId)
             {
                 throw new NotFoundException(nameof(Notes), request.Id);
             }
